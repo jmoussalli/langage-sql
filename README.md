@@ -7,7 +7,7 @@
 
 ## A propos
 
-Ce dépôt contient du matériel de soutien pour le cours *Langage SQL*
+Ce dépôt contient du matériel de soutien pour le cours **Langage SQL**
 
 ## Contenu
 
