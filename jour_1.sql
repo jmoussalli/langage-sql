@@ -71,4 +71,16 @@ INSERT INTO friends (name, dob) VALUES ('Christian', '1980-01-25');
 
 SELECT  name, 2023 - EXTRACT(YEAR FROM dob) FROM friends;
 
+--- 8 UPdate rows
+SELECT * FROM books;
+UPDATE books SET price='25' WHERE year_published = 2010;
+UPDATE books SET title='Introduction au JAVA' WHERE id = 1;
+ 
+-- Modifier une table
+ALTER TABLE books ALTER COLUMN price TYPE NUMERIC;
+SELECT * FROM books;
 
+ALTER TABLE books ADD COLUMN page SMALLINT;
+SELECT * FROM books;
+
+--- 
