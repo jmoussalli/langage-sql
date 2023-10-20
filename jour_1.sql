@@ -76,11 +76,28 @@ SELECT * FROM books;
 UPDATE books SET price='25' WHERE year_published = 2010;
 UPDATE books SET title='Introduction au JAVA' WHERE id = 1;
  
--- Modifier une table
+-- 9 Modifier une table
 ALTER TABLE books ALTER COLUMN price TYPE NUMERIC;
 SELECT * FROM books;
 
 ALTER TABLE books ADD COLUMN page SMALLINT;
 SELECT * FROM books;
 
---- 
+--- 10 Constraintes
+DROP TABLE books;
+CREATE TABLE books (
+	id SERIAL,
+	title VARCHAR(100),
+	year_published SMALLINT,
+	publisher VARCHAR(50),
+	price NUMERIC NOT NULL,
+	available  BOOL,
+	CONSTRAINT book_price_check  CHECK(price > 10.0)
+);
+
+ALTER TABLE books DROP CONSTRAINT book_price_check, ADD CONSTRAINT book_price_check CHECK(price > 50.0);
+INSERT INTO books(id, title, year_published, available, price) VALUES (1, 'Introduction au JAVA', 2020, 'y', 15.0);
+INSERT INTO books(title, year_published, available, price) VALUES ('Introduction au langage SQL', 2005, 'y', 50.50);
+SELECT * FROM books;
+
+-- 11 Contraite UNIQUE
