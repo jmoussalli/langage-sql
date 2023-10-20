@@ -101,3 +101,10 @@ INSERT INTO books(title, year_published, available, price) VALUES ('Introduction
 SELECT * FROM books;
 
 -- 11 Contraite UNIQUE
+SELECT * FROM authors;
+
+ALTER TABLE authors ADD CONSTRAINT  authors_unique_id UNIQUE (id);
+INSERT INTO authors VALUES (2, 'Nehemie', 'BA', 'NB');
+
+ALTER TABLE authors ADD CONSTRAINT  authors_unique_intial UNIQUE (initial);
+INSERT INTO authors VALUES (2, 'Nathan', 'BA', 'NB');
