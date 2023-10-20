@@ -29,4 +29,46 @@ SELECT 3/3;
 
 SELECT title, price, 3+3, available FROM books;
 
+-- 4 CHAR TYPE
+DROP TABLE authors;
+CREATE TABLE authors (
+	id INTEGER,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	initial CHAR(3)
+);
+
+INSERT INTO authors (id, first_name, last_name, initial) VALUES (1, 'Nehemie', 'Balukidi', 'N');
+INSERT INTO authors (id, first_name, last_name, initial) VALUES (2, 'Gilesd', 'Desjardin', 'GD');
+
+SELECT CONCAT('*', initial, '*') FROM authors;
+
+-- 5 SERIAL DATA type
+DROP TABLE authors;
+CREATE TABLE authors (
+	id SERIAL,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	initial CHAR(3)
+);
+INSERT INTO authors (first_name, last_name, initial) VALUES ('Nehemie', 'Balukidi', 'N');
+INSERT INTO authors (first_name, last_name, initial) VALUES ('Gilesd', 'Desjardin', 'GD');
+
+SELECT * FROM authors;
+
+-- 6 Select sans colones
+
+INSERT INTO authors VALUES (DEFAULT, 'Christian', 'Lisangola', 'CL');
+SELECT * FROM authors;
+
+-- 7 Date
+CREATE TABLE friends (
+	name VARCHAR(20),
+	dob DATE
+);
+
+INSERT INTO friends (name, dob) VALUES ('Christian', '1980-01-25');
+
+SELECT  name, 2023 - EXTRACT(YEAR FROM dob) FROM friends;
+
 
