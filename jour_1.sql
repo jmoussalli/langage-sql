@@ -20,3 +20,13 @@ CREATE TABLE authors (
 INSERT INTO books(id, title, year_published, price, available) VALUES (1, 'Introduction au JAVA', 2020, '50', 'y');
 SELECT * FROM books;
 
+-- 3. SELECT
+INSERT INTO books(id, title, year_published, price, available, publisher) VALUES (2, 'SQL pour les Full-Stack dev', 2010, '150', 'y', 'Packt');
+SELECT title FROM books;
+SELECT title, price, available FROM books;
+
+SELECT 3/3;
+
+SELECT title, price, 3+3, available FROM books;
+
+
