@@ -108,3 +108,35 @@ INSERT INTO authors VALUES (2, 'Nehemie', 'BA', 'NB');
 
 ALTER TABLE authors ADD CONSTRAINT  authors_unique_intial UNIQUE (initial);
 INSERT INTO authors VALUES (2, 'Nathan', 'BA', 'NB');
+
+-- 12 Utilisation des alias
+SELECT first_name AS "Son Prenom" FROM authors;
+SELECT 3*3 AS "Trois x Trois";
+SELECT first_name AS "Son Prenom", CONCAT(first_name, ' ', last_name) AS "Nom complet" FROM authors;
+
+SELECT auteur.first_name AS "Son Prenom" FROM authors AS auteur;
+SELECT first_name FROM authors AS auteur;
+SELECT auteur.first_name AS "Son Prenom", auteur.last_name, auteur.initial FROM authors AS auteur;
+
+-- 13 Distinct
+INSERT INTO books(title, year_published, available, price) VALUES ('Introduction au JAVA', 2020, 'y', 75.0),
+('Introduction au langage SQL', 2005, 'y', 50.50), ('Agile', 2005, 'y', 50.50);
+
+SELECT DISTINCT year_published FROM books;
+
+-- 14 WHERE clause
+SELECT * FROM books;
+SELECT * FROM books WHERE year_published = 2020;
+SELECT * FROM books WHERE year_published < 2020;
+
+-- 15 LIKE and ILIKE
+SELECT * FROM books WHERE title LIKE 'I%';
+SELECT * FROM books WHERE title LIKE '%e';
+SELECT * FROM books WHERE title LIKE '%i%';
+SELECT * FROM books WHERE title LIKE '%a%';
+SELECT * FROM books WHERE year_published < 2020 AND title LIKE '%e';
+SELECT * FROM books WHERE year_published < 2020 OR title LIKE '%A';
+SELECT * FROM books WHERE year_published < 2020 OR title ILIKE '%a';
+
+
+
