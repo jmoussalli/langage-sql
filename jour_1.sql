@@ -136,7 +136,4 @@ SELECT * FROM books WHERE title LIKE '%i%';
 SELECT * FROM books WHERE title LIKE '%a%';
 SELECT * FROM books WHERE year_published < 2020 AND title LIKE '%e';
 SELECT * FROM books WHERE year_published < 2020 OR title LIKE '%A';
-SELECT * FROM books WHERE year_published < 2020 OR title ILIKE '%a';
-
-
-
+SELECT * FROM books WHERE year_published < 2020 OR title ILIKE '%A';
