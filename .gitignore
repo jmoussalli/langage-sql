@@ -1,4 +1,5 @@
 *.txt
 *.md
+!README.md
 *.drawio
-as-we-prepare.sql
+temp_*
