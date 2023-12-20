@@ -1,7 +1,49 @@
--- CREATE DATABASE bookstore;
+CREATE DATABASE bookstore;
+CREATE SCHEMA public;
+CREATE SCHEMA toto;
 
--- CREATE SCHEMA public;
--- CREATE SCHEMA toto;
+create TABLE IF NOT EXISTS public.books (
+	id INTEGER,
+	title VARCHAR(150),
+	year_published SMALLINT,
+	price NUMERIC
+);
+
+-- DROP TABLE IF EXISTS public.books;
+-- Ceci est un commentaire
+
+create TABLE IF NOT EXISTS books.books (
+	id INTEGER,
+	title VARCHAR(150)
+);
+INSERT INTO books (id, title) VALUES (1, 'Coin coin !');
+
+INSERT INTO public.books (id, title, year_published, price) VALUES (1, 'Introduction to SQL', 2010, 15.49);
+INSERT INTO public.books (id, title, year_published, price) VALUES (1, 'Git & GitHub', 2014, 21.99);
+
+select count(*) from public.books;
+
+select * from public.books LIMIT 1;
+
+select count(*) from public.books;
+
+delete from books;
+
+select count(*) from public.books;
+
+
+SELECT 3+3;
+
+SELECT SUM(price) from public.books;
+
+select * from books.books;
+
+
+create TABLE IF NOT EXISTS authors (
+	id INTEGER,
+	first_name VARCHAR(100),
+	last_name VARCHAR(100)
+);
 
 DROP TABLE IF EXISTS books;
 
@@ -15,11 +57,10 @@ CREATE TABLE IF NOT EXISTS public.books (
 -- Ceci est un commentaire
 
 INSERT INTO books (id, title, year_published, price) VALUES (1, 'Introduction to SQL', 2010, 15.49);
+INSERT INTO books (id, title, year_published, price) VALUES (2, 'Git & GitHub', 2014, 21.99);
 
 -- Lire tables
 SELECT * FROM books;
-
-INSERT INTO books (id, title, year_published, price) VALUES (2, 'Git & GitHub', 2014, 21.99);
 
 SELECT id FROM books;
 SELECT id, title FROM books;
@@ -127,3 +168,5 @@ SELECT AVG(price) FROM books;
 
 -- ROUND
 SELECT ROUND(AVG(price)) FROM books;
+
+
