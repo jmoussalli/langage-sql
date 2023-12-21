@@ -100,4 +100,5 @@ select *, price*units_sold AS total_ventes  from telephones where price*units_so
 select name, manufacturer, price * units_sold AS total_vente from telephones ORDER BY manufacturer, name;
 select name, manufacturer, SUM(units_sold*price) AS total_vente from telephones GROUP BY name, manufacturer ORDER BY manufacturer, name;
 
-select manufacturer, SUM(units_sold) as qty from telephones GROUP BY manufacturer HAVING SUM(units_sold) > 1000 ORDER BY manufacturer;
+select manufacturer, SUM(units_sold) as qty
+from telephones GROUP BY manufacturer HAVING SUM(units_sold) > 1000 ORDER BY manufacturer;

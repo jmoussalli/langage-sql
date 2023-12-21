@@ -48,7 +48,7 @@ create TABLE IF NOT EXISTS authors (
 DROP TABLE IF EXISTS books;
 
 CREATE TABLE IF NOT EXISTS public.books (
-	id INTEGER,
+	id SERIAL,
 	title VARCHAR(150),
 	year_published SMALLINT,
 	price NUMERIC
